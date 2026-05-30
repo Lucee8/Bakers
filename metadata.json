@@ -1,0 +1,6 @@
+{
+  "name": "Vaishali Bakers",
+  "description": "Premium visual catalog and bulk order enquiries for Vaishali Bakers, handcrafted by Vaishali Nilesh Sarang in Mumbai.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

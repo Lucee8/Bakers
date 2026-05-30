@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Custom Monginis-inspired palette for Vaishali Bakers */
+  --color-brand-brown: #1e113a;     /* Deep Royal Indigo-Violet / Plum Plum (Headings) */
+  --color-brand-cream: #ffffff;     /* Pure Clean White */
+  --color-brand-gold: #db0075;      /* Vibrant Monginis Pink Magenta */
+  --color-brand-pink: #db0075;      /* Vibrant Monginis Pink Magenta */
+  --color-brand-teal: #10b981;      /* Emerald Green for Veg Indicators and Badges */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+  scroll-behavior: smooth;
+  background-color: #ffffff;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: #1e113a;
+}
+
+
