@@ -2,20 +2,20 @@ import cakesSpecialImg from './assets/images/cakes_special_1779797201179.png';
 import browniesSpecialImg from "./assets/images/Brownie01.png";
 import cupcakesSpecialImg from './assets/images/Cupcake01.png';
 import Blackforestcake from './assets/images/black forest.webp';
-import vanillaCake from './assets/images/Vanilla-cake.jpg';
-import vanillaCake from './assets/images/Vanilla-cake.jpg';
-import vanillaCake from './assets/images/Vanilla-cake.jpg';
-import vanillaCake from './assets/images/Vanilla-cake.jpg';
-import vanillaCake from './assets/images/Vanilla-cake.jpg';
-import vanillaCake from './assets/images/Vanilla-cake.jpg';
-import vanillaCake from './assets/images/Vanilla-cake.jpg';
-import vanillaCake from './assets/images/Vanilla-cake.jpg';
-import vanillaCake from './assets/images/Vanilla-cake.jpg';
-import vanillaCake from './assets/images/Vanilla-cake.jpg';
-import vanillaCake from './assets/images/Vanilla-cake.jpg';
-import vanillaCake from './assets/images/Vanilla-cake.jpg';
-import vanillaCake from './assets/images/Vanilla-cake.jpg';
-
+import Pineapplecake from './assets/images/pineapple-cake-700x700.webp';
+import kulfifaluda from './assets/images/kulfi faluda.jpg';
+import Gulabgulkand from '.assets/images/Gulab gulkand.jpg';
+import coffeecake from './assets/images/coffee cake.jpeg';
+import oreocake from './assets/images/oreo cake.jpg';
+import Rasmalai from './assets/images/Rasmalai.webp';
+import chocolate from './assets/images/chocolate.webp';
+import truffle from './assets/images/truffle cake.jpeg';
+import photo from '.assets/images/photo print cake.jpeg';
+import barbie from './assets/images/barbie.jpeg';
+import plum from './assets/images/plum cake.jpg';
+import vintage from './assets/images/vintage cake.jpg';
+import spacer from './assets/images/spacer cake.jpg';
+import theme from './assets/images/theme cake.jpg';
 export interface Product {
   id: string;
   name: string;
@@ -59,6 +59,7 @@ export const PRODUCTS: Product[] = [
     features: ['Dark chocolate flakes', 'Fresh cream piping', 'Traditional cherry layers'],
     isVeg: true,
   },
+
   {
     id: 'cake-pineapple',
     name: 'Pineapple cake',
@@ -68,10 +69,11 @@ export const PRODUCTS: Product[] = [
     badge: 'Bestseller',
     badgeColor: 'pink',
     description: 'Light and airy vanilla sponge cake layered with chopped pineapples, juicy pineapple syrup, and rich fresh cream.',
-    image: 'src/assets/images/pineapple-cake-700x700.webp',
+    image: Pineapplecake,
     features: ['Real pineapple chunks', 'Soft vanilla sponge', 'Melt-in-mouth icing'],
     isVeg: true,
   },
+
   {
     id: 'cake-kulfi-falooda',
     name: 'Kulfi Falooda cake',
@@ -81,10 +83,11 @@ export const PRODUCTS: Product[] = [
     badge: 'Chef Special',
     badgeColor: 'gold',
     description: 'Signature fusion dessert cake blending classic royal rose syrup, falooda vermicelli textures, and rich cardamom-infused kulfi flavors.',
-    image: 'src/assets/images/kulfi faluda.jpg',
+    image: kulfifaluda,
     features: ['Cardamom & Saffron notes', 'Fusion Indian flavor', 'Pistachio toppings'],
     isVeg: true,
   },
+
   {
     id: 'cake-gulab-gulkand',
     name: 'Gulab gulkand cake',
@@ -94,10 +97,11 @@ export const PRODUCTS: Product[] = [
     badge: 'Chef Special',
     badgeColor: 'gold',
     description: 'Distinctive sponge cake layered with premium aromatic sweetened rose petal preservation (gulkand) and soft gulab jamun bites.',
-    image: 'src/assets/images/Gulab gulkand.jpg',
+    image: Gulabgulkand,
     features: ['Rich premium gulkand syrup', 'Soft gulab jamun garnish', 'Royal rose scent'],
     isVeg: true,
   },
+
   {
     id: 'cake-coffee',
     name: 'Coffee cake',
@@ -107,10 +111,11 @@ export const PRODUCTS: Product[] = [
     badge: 'New Arrival',
     badgeColor: 'teal',
     description: 'Aromatic espresso-infused sponge layers sandwiched between airy coffee whipped cream frosting and cocoa dust.',
-    image: 'src/assets/images/coffee cake.jpeg',
+    image: coffeecake,
     features: ['Fresh espresso infusion', 'Perfect bittersweet balance', 'Grated dark chocolate'],
     isVeg: true,
   },
+
   {
     id: 'cake-oreo',
     name: 'Oreo cake',
@@ -120,10 +125,11 @@ export const PRODUCTS: Product[] = [
     badge: 'Must Try',
     badgeColor: 'pink',
     description: 'Crunchy crushed Oreo cookies folded into cookies-and-cream chocolate frosting inside beautiful moist cocoa cake layers.',
-    image: 'src/assets/images/oreo cake.jpg',
+    image: oreocake,
     features: ['Real Oreo cookies', 'Creamy Oreo frosting', 'Kid-friendly bestseller'],
     isVeg: true,
   },
+
   {
     id: 'cake-rasmalai',
     name: 'Rasmalai cake',
@@ -133,10 +139,11 @@ export const PRODUCTS: Product[] = [
     badge: 'Bestseller',
     badgeColor: 'pink',
     description: 'Decadent cake infused with royal saffron-pistachio cardamom milk, stuffed with real cottage cheese Rasmalai chunks.',
-    image: 'src/assets/images/Rasmalai.webp',
+    image: Rasmalai,
     features: ['Authentic sweet Rasmalai', 'Rich saffron-pistachio cream', 'Elegant festive highlight'],
     isVeg: true,
   },
+
   {
     id: 'cake-chocolate',
     name: 'Chocolate cake',
@@ -146,10 +153,11 @@ export const PRODUCTS: Product[] = [
     badge: 'Must Try',
     badgeColor: 'teal',
     description: 'Perfect simple cocoa sponge layered with sweet, chocolate fresh cream and beautiful chocolate curls.',
-    image: 'src/assets/images/chocolate.webp',
+    image: chocolate,
     features: ['Smooth chocolate cream', 'Moist layers', 'Includes celebration accessories'],
     isVeg: true,
   },
+
   {
     id: 'cake-truffle',
     name: 'Chocolate truffle cake',
@@ -159,10 +167,11 @@ export const PRODUCTS: Product[] = [
     badge: 'Bestseller',
     badgeColor: 'pink',
     description: 'Decadent multi-layered moist chocolate sponge sandwiched with dark chocolate ganache, finished with a mirror-glaze truffle coat.',
-    image: 'src/assets/images/truffle cake.jpeg',
+    image: truffle,
     features: ['Real premium dark chocolate', 'Moist layers', 'Includes candle & spatula'],
     isVeg: true,
   },
+
   {
     id: 'cake-photoprint',
     name: 'Photo print cake',
@@ -172,10 +181,11 @@ export const PRODUCTS: Product[] = [
     badge: 'Gift Pack',
     badgeColor: 'gold',
     description: 'Fully personalized cake featuring high-definition edible sugar-sheet printing of your favorite memory photo.',
-    image: 'src/assets/images/photo print cake.jpeg',
+    image: photo,
     features: ['100% edible photo ink', 'Custom premium frame design', 'Personalized text details'],
     isVeg: true,
   },
+
   {
     id: 'cake-barbiedoll',
     name: 'Barbie doll cake',
@@ -185,10 +195,11 @@ export const PRODUCTS: Product[] = [
     badge: 'Chef Special',
     badgeColor: 'gold',
     description: 'Stunning 3D princess doll cake styled with custom designer pink fresh cream frosting cascades and star sprinkles.',
-    image: 'src/assets/images/barbie.jpeg',
+    image: barbie,
     features: ['Elegant Barbie centerpiece', 'Intricate rosette skirt piping', 'Perfect for child birthday theme'],
     isVeg: true,
   },
+
   {
     id: 'cake-plum',
     name: 'Plum cake',
@@ -198,10 +209,11 @@ export const PRODUCTS: Product[] = [
     badge: 'New Arrival',
     badgeColor: 'teal',
     description: 'Rich traditional-blend fruit cake loaded with rum-infused black currants, candied orange peels, walnuts, and fine warm spices.',
-    image: 'src/assets/images/plum cake.jpg',
+    image: plum,
     features: ['Matured dry fruits selection', 'Rich winter spice blend', 'Sponge buttery finish'],
     isVeg: true,
   },
+
   {
     id: 'cake-vintage',
     name: 'Vintage cake',
@@ -211,10 +223,11 @@ export const PRODUCTS: Product[] = [
     badge: 'Must Try',
     badgeColor: 'pink',
     description: 'Charming, retro-style cake styled with elaborate buttercream piping ribbons, royal ruffles, and classic maraschino cherries on top.',
-    image: 'src/assets/images/vintage cake.jpg',
+    image: vintage,
     features: ['Ornate Victorian piping', 'Rich customizable base sponge', 'Charming retro-inspired finish'],
     isVeg: true,
   },
+
   {
     id: 'cake-spacer',
     name: 'Spacer cake',
@@ -224,10 +237,11 @@ export const PRODUCTS: Product[] = [
     badge: 'Chef Special',
     badgeColor: 'gold',
     description: 'A structural masterpiece featuring elegant rising structural spacer rings, allowing beautiful flower arrays or light installations beneath higher layers.',
-    image: 'src/assets/images/spacer cake.jpg',
+    image: spacer,
     features: ['Modern multi-tier design', 'Customizable crystal/acrylic tier spacer', 'Dramatic party statement look'],
     isVeg: true,
   },
+
   {
     id: 'cake-theme',
     name: 'Theme cake',
@@ -237,10 +251,11 @@ export const PRODUCTS: Product[] = [
     badge: 'Gift Pack',
     badgeColor: 'teal',
     description: 'Individually conceptualized themed cakes built to match your design palette—perfect for anniversaries, anime styles, professions, or kid cartoons.',
-    image: 'src/assets/images/theme cake.jpg',
+    image: theme,
     features: ['Personalized handcrafted elements', 'Colorful food-safe fondant details', 'Signature gourmet filling flavor'],
     isVeg: true,
   },
+
   // 2. Brownies Category
   {
     id: 'brownie-walnut',
