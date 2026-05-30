@@ -1,7 +1,7 @@
 import cakesSpecialImg from './assets/images/cakes_special_1779797201179.png';
 import browniesSpecialImg from "./assets/images/Brownie01.png";
 import cupcakesSpecialImg from './assets/images/Cupcake01.png';
-
+import vanillaCake from './assets/images/Vanilla-cake.jpg';
 export interface Product {
   id: string;
   name: string;
@@ -27,7 +27,7 @@ export const PRODUCTS: Product[] = [
     badge: 'Bestseller',
     badgeColor: 'pink',
     description: 'Decadent rich vanilla bean sponge cake layered with premium white vanilla diplomat cream and white chocolate shavings.',
-    image: 'assets/images/Vanilla-cake.jpg',
+    image: vanillaCake,
     features: ['Madagascar vanilla bean', 'Smooth whipping cream', 'Perfect elegant look'],
     isVeg: true,
   },
