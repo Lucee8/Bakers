@@ -27,7 +27,7 @@ export const PRODUCTS: Product[] = [
     badge: 'Bestseller',
     badgeColor: 'pink',
     description: 'Decadent rich vanilla bean sponge cake layered with premium white vanilla diplomat cream and white chocolate shavings.',
-    image: '/assets/images/Vanilla-cake.jpg',
+    image: 'assets/images/Vanilla-cake.jpg',
     features: ['Madagascar vanilla bean', 'Smooth whipping cream', 'Perfect elegant look'],
     isVeg: true,
   },
