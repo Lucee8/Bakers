@@ -18,8 +18,6 @@ import vintage from './assets/images/vintage cake.jpg';
 import spacer from './assets/images/spacer cake.jpg';
 import theme from './assets/images/theme cake.jpg';
 import Vanilla from './assets/images/Vanilla sponge cupcakes.jpeg';
-import DarkChocolate from './assets/images/Dark.png';
-
 export interface Product {
   id: string;
   name: string;
@@ -275,20 +273,6 @@ export const PRODUCTS: Product[] = [
     isVeg: true,
   },
 
-  // {
-  //   id: 'brownie-fudge',
-  //   name: 'Choco fudge brownie',
-  //   category: 'brownies',
-  //   price: 40,
-  //   unit: '1 piece / Pack of 4',
-  //   badge: 'Must Try',
-  //   badgeColor: 'gold',
-  //   description: 'Decadent chocolate brownie topped with thick, luxurious chocolate fudge ganache drizzle.',
-  //   image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&q=80&w=600',
-  //   features: ['Double chocolate goodness', 'Dense chewiness', 'Perfect with ice cream'],
-  //   isVeg: true,
-  // },
-
   // 3. Chocolate Cupcakes Category
   {
     id: 'cupcake-chocolate-fudge',
@@ -303,20 +287,6 @@ export const PRODUCTS: Product[] = [
     features: ['Signature cocoa butter sponge', 'Velvety frosting', 'Handcrafted decoration'],
     isVeg: true,
   },
-
-  // {
-  //   id: 'cupcake-choco-lava',
-  //   name: 'Choco lava cupcake',
-  //   category: 'chocolate-cupcakes',
-  //   price: 50,
-  //   unit: '1 piece / Pack of 6',
-  //   badge: 'New Arrival',
-  //   badgeColor: 'teal',
-  //   description: 'Moist chocolate cupcake filled with a rich, molten liquid chocolate core that oozes on the first bite.',
-  //   image: 'https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&q=80&w=600',
-  //   features: ['Molten chocolate center', 'Warm & soft texture', 'Decadent cocoa selection'],
-  //   isVeg: true,
-  // },
 
   // 4. Vanilla Sponge Cupcakes Category
   {
@@ -333,23 +303,22 @@ export const PRODUCTS: Product[] = [
     isVeg: true,
   }
 
-    // 4. Dark chocolate Category
-{
-  id: 'Dark-chocolate',
-  name: 'Dark Chocolate',
-  category: 'brownies',
-  price: 6,
-  unit: 'minimum 50',
-  badgeColor: 'gold',
-  description: 'Rich and indulgent handcrafted dark chocolates wrapped in premium foil, featuring an intense cocoa flavor with a smooth, velvety finish for true chocolate lovers.',
-  image: DarkChocolate,
-  features: [
-    '70% premium dark cocoa',
-    'Smooth melt-in-mouth texture',
-    'Handcrafted artisan quality'
-  ],
-  isVeg: true,
-}
+    // 5. brownie-fudge
+    {
+    id: 'brownie-fudge',
+    name: 'Choco fudge brownie',
+    category: 'brownies',
+    price: 40,
+    unit: '1 piece / Pack of 4',
+    badge: 'Must Try',
+    badgeColor: 'gold',
+    description: 'Decadent chocolate brownie topped with thick, luxurious chocolate fudge ganache drizzle.',
+    image: 'Vanilla',
+    features: ['Double chocolate goodness', 'Dense chewiness', 'Perfect with ice cream'],
+    isVeg: true,
+  },
+
+
 ];
 
 export const DELIVERY_ZONES = [
