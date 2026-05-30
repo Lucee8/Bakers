@@ -303,21 +303,6 @@ export const PRODUCTS: Product[] = [
     isVeg: true,
   }
 
-    // 5. brownie-fudge
-    {
-    id: 'brownie-fudge',
-    name: 'Choco fudge brownie',
-    category: 'brownies',
-    price: 40,
-    unit: '1 piece / Pack of 4',
-    badge: 'Must Try',
-    badgeColor: 'gold',
-    description: 'Decadent chocolate brownie topped with thick, luxurious chocolate fudge ganache drizzle.',
-    image: 'Vanilla',
-    features: ['Double chocolate goodness', 'Dense chewiness', 'Perfect with ice cream'],
-    isVeg: true,
-  },
-
 
 ];
 
