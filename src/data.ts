@@ -302,6 +302,21 @@ export const PRODUCTS: Product[] = [
     features: ['Premium vanilla base', 'Milk chocolate whipped frosting', 'Delicate crumb texture'],
     isVeg: true,
   }
+  
+  // 5. Vanilla Sponge Cupcakes Category
+  {
+    id: 'dark-chocolate',
+    name: 'Vanilla sponge cupcake',
+    category: 'vanilla-cupcakes',
+    price: 300,
+    unit: '1 piece / Pack of 50',
+    badge: 'Chef Special',
+    badgeColor: 'gold',
+    description: '.',
+    image: Vanilla,
+    features: [''],
+    isVeg: true,
+  }
 
 
 ];
