@@ -3,8 +3,8 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Grid, Eye, MessageCircle, Heart, Plus, Minus, Cake, Sparkles, Award, Coffee, Share2, X, Copy, Check, Instagram, Send, ExternalLink } from 'lucide-react';
 import { PRODUCTS, Product } from '../data';
 import cakesSpecialImg from '../assets/images/cakes_special_1779797201179.png';
-import browniesSpecialImg from '../assets/images/brownies_special_1779797159768.png';
-import cupcakesSpecialImg from '../assets/images/cupcakes_special_1779797178372.png';
+import browniesSpecialImg from "../assets/images/Brownie01.png";
+import cupcakesSpecialImg from '../assets/images/Cupcake01.png';
 
 // Custom interface representing a product in the active selection
 export interface CartItem {
@@ -104,7 +104,7 @@ export default function CatalogSection({
       id: 'vanilla-cupcakes' as const,
       label: 'Vanilla sponge cupcakes',
       labelColor: 'text-[#1e113a]',
-      image: 'https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&q=80&w=600',
+      image: 'src/assets/images/Vanilla sponge cupcakes.jpeg',
       caption: 'Soft vanilla sponge cupcakes'
     }
   ];
@@ -115,9 +115,9 @@ export default function CatalogSection({
       case 'cakes':
         return 'Custom Celebration Cakes';
       case 'brownies':
-        return 'Signature Walnut Brownies';
+        return 'Brownies';
       case 'chocolate-cupcakes':
-        return 'Gourmet Chocolate Cupcakes';
+        return 'Cupcakes';
       case 'vanilla-cupcakes':
         return 'Vanilla Sponge Cupcakes';
       default:

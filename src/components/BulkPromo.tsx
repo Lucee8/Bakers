@@ -26,7 +26,7 @@ export default function BulkPromo() {
 
   // Generate WhatsApp message customized to the calculator selections
   const handleWhatsAppEnquiry = () => {
-    const itemName = itemType === 'cupcakes' ? 'Gourmet Cupcakes' : 'Signature Walnut Brownies';
+    const itemName = itemType === 'cupcakes' ? 'Gourmet Cupcakes' : 'Brownies';
     const message = `Hello Vaishali, I visited your Vaishali Bakers catalog and would like to enquire about a Bulk Order.
     
 • Item Type: ${itemName}
