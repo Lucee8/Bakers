@@ -5,6 +5,9 @@ import { PRODUCTS, Product } from '../data';
 import cakesSpecialImg from '../assets/images/cakes_special_1779797201179.png';
 import browniesSpecialImg from "../assets/images/Brownie01.png";
 import cupcakesSpecialImg from '../assets/images/Cupcake01.png';
+import Vanillasponge from '../assets/images/Vanilla sponge cupcakes.jpeg';
+
+
 
 // Custom interface representing a product in the active selection
 export interface CartItem {
@@ -104,7 +107,7 @@ export default function CatalogSection({
       id: 'vanilla-cupcakes' as const,
       label: 'Vanilla sponge cupcakes',
       labelColor: 'text-[#1e113a]',
-      image: 'src/assets/images/Vanilla sponge cupcakes.jpeg',
+      image: Vanillasponge,
       caption: 'Soft vanilla sponge cupcakes'
     }
   ];
