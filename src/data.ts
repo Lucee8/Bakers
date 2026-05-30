@@ -4,7 +4,7 @@ import cupcakesSpecialImg from './assets/images/Cupcake01.png';
 import Blackforestcake from './assets/images/black forest.webp';
 import Pineapplecake from './assets/images/pineapple-cake-700x700.webp';
 import kulfifaluda from './assets/images/kulfi faluda.jpg';
-import Gulabgulkand from '.assets/images/Gulab gulkand.jpg';
+import Gulab from '.assets/images/Gulab gulkand.jpg';
 import coffeecake from './assets/images/coffee cake.jpeg';
 import oreocake from './assets/images/oreo cake.jpg';
 import Rasmalai from './assets/images/Rasmalai.webp';
@@ -97,7 +97,7 @@ export const PRODUCTS: Product[] = [
     badge: 'Chef Special',
     badgeColor: 'gold',
     description: 'Distinctive sponge cake layered with premium aromatic sweetened rose petal preservation (gulkand) and soft gulab jamun bites.',
-    image: Gulabgulkand,
+    image: Gulab,
     features: ['Rich premium gulkand syrup', 'Soft gulab jamun garnish', 'Royal rose scent'],
     isVeg: true,
   },
