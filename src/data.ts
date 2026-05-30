@@ -310,7 +310,7 @@ export const PRODUCTS: Product[] = [
     name: 'Handcrafted signature truffles',
     category: 'chocolates',
     price: 0,
-    unit: 'Box of 12 / 24',
+    unit: '100',
     badge: 'Chef Special',
     badgeColor: 'gold',
     description: 'Luxury assortment of dark ganache truffles, salted caramel pralines, and hazelnut clusters hand-dipped in premium Belgian tempering.',
