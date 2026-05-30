@@ -335,7 +335,7 @@ export const PRODUCTS: Product[] = [
 
     // 4. Dark chocolate Category
 {
-  id: 'Dark chocolate',
+  id: 'Dark-chocolate',
   name: 'Dark Chocolate',
   category: '',
   price: ,
