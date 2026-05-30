@@ -337,10 +337,9 @@ export const PRODUCTS: Product[] = [
 {
   id: 'Dark-chocolate',
   name: 'Dark Chocolate',
-  category: '',
-  price: ,
+  category: 'brownies',
+  price: 6,
   unit: 'minimum 50',
-  badge: 'Best Seller',
   badgeColor: 'gold',
   description: 'Rich and indulgent handcrafted dark chocolates wrapped in premium foil, featuring an intense cocoa flavor with a smooth, velvety finish for true chocolate lovers.',
   image: DarkChocolate,
