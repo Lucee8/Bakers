@@ -48,7 +48,6 @@ export const PRODUCTS: Product[] = [
     features: ['Madagascar vanilla bean', 'Smooth whipping cream', 'Perfect elegant look'],
     isVeg: true,
   },
-
   {
     id: 'cake-blackforest',
     name: 'Black forest cake',
@@ -62,7 +61,6 @@ export const PRODUCTS: Product[] = [
     features: ['Dark chocolate flakes', 'Fresh cream piping', 'Traditional cherry layers'],
     isVeg: true,
   },
-
   {
     id: 'cake-pineapple',
     name: 'Pineapple cake',
@@ -76,7 +74,6 @@ export const PRODUCTS: Product[] = [
     features: ['Real pineapple chunks', 'Soft vanilla sponge', 'Melt-in-mouth icing'],
     isVeg: true,
   },
-
   {
     id: 'cake-kulfi-falooda',
     name: 'Kulfi Falooda cake',
@@ -90,7 +87,6 @@ export const PRODUCTS: Product[] = [
     features: ['Cardamom & Saffron notes', 'Fusion Indian flavor', 'Pistachio toppings'],
     isVeg: true,
   },
-
   {
     id: 'cake-gulab-gulkand',
     name: 'Gulab gulkand cake',
@@ -104,7 +100,6 @@ export const PRODUCTS: Product[] = [
     features: ['Rich premium gulkand syrup', 'Soft gulab jamun garnish', 'Royal rose scent'],
     isVeg: true,
   },
-
   {
     id: 'cake-coffee',
     name: 'Coffee cake',
@@ -118,7 +113,6 @@ export const PRODUCTS: Product[] = [
     features: ['Fresh espresso infusion', 'Perfect bittersweet balance', 'Grated dark chocolate'],
     isVeg: true,
   },
-
   {
     id: 'cake-oreo',
     name: 'Oreo cake',
@@ -132,7 +126,6 @@ export const PRODUCTS: Product[] = [
     features: ['Real Oreo cookies', 'Creamy Oreo frosting', 'Kid-friendly bestseller'],
     isVeg: true,
   },
-
   {
     id: 'cake-rasmalai',
     name: 'Rasmalai cake',
@@ -146,7 +139,6 @@ export const PRODUCTS: Product[] = [
     features: ['Authentic sweet Rasmalai', 'Rich saffron-pistachio cream', 'Elegant festive highlight'],
     isVeg: true,
   },
-
   {
     id: 'cake-chocolate',
     name: 'Chocolate cake',
@@ -160,7 +152,6 @@ export const PRODUCTS: Product[] = [
     features: ['Smooth chocolate cream', 'Moist layers', 'Includes celebration accessories'],
     isVeg: true,
   },
-
   {
     id: 'cake-truffle',
     name: 'Chocolate truffle cake',
@@ -174,7 +165,6 @@ export const PRODUCTS: Product[] = [
     features: ['Real premium dark chocolate', 'Moist layers', 'Includes candle & spatula'],
     isVeg: true,
   },
-
   {
     id: 'cake-photoprint',
     name: 'Photo print cake',
@@ -188,7 +178,6 @@ export const PRODUCTS: Product[] = [
     features: ['100% edible photo ink', 'Custom premium frame design', 'Personalized text details'],
     isVeg: true,
   },
-
   {
     id: 'cake-barbiedoll',
     name: 'Barbie doll cake',
@@ -202,7 +191,6 @@ export const PRODUCTS: Product[] = [
     features: ['Elegant Barbie centerpiece', 'Intricate rosette skirt piping', 'Perfect for child birthday theme'],
     isVeg: true,
   },
-
   {
     id: 'cake-plum',
     name: 'Plum cake',
@@ -216,7 +204,6 @@ export const PRODUCTS: Product[] = [
     features: ['Matured dry fruits selection', 'Rich winter spice blend', 'Sponge buttery finish'],
     isVeg: true,
   },
-
   {
     id: 'cake-vintage',
     name: 'Vintage cake',
@@ -230,7 +217,6 @@ export const PRODUCTS: Product[] = [
     features: ['Ornate Victorian piping', 'Rich customizable base sponge', 'Charming retro-inspired finish'],
     isVeg: true,
   },
-
   {
     id: 'cake-spacer',
     name: 'Spacer cake',
@@ -244,7 +230,6 @@ export const PRODUCTS: Product[] = [
     features: ['Modern multi-tier design', 'Customizable crystal/acrylic tier spacer', 'Dramatic party statement look'],
     isVeg: true,
   },
-
   {
     id: 'cake-theme',
     name: 'Theme cake',
@@ -339,13 +324,11 @@ export const DELIVERY_ZONES = [
     areas: ['Vashi', 'Nerul', 'Koparkhairane', 'Belapur', 'Kharghar', 'Ghansoli', 'Airoli'],
     description: 'Carefully packed cake boxes delivered in air-conditioned courier transit to protect frosting.'
   },
-
   {
     name: 'Central Mumbai',
     areas: ['Kanjurmarg', 'Bhandup', 'Mulund', 'Ghatkopar', 'Vikhroli', 'Sion', 'Kurla', 'Dadrar'],
     description: 'Local lightning delivery from our Kanjurmarg West workspace. Freshly out of the oven.'
   },
-
   {
     name: 'Western Mumbai',
     areas: ['Andheri', 'Bandra', 'Borivali', 'Malad', 'Goregaon', 'Juhu', 'Santacruz'],
