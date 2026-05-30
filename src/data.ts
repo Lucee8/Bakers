@@ -5,7 +5,7 @@ import Blackforestcake from './assets/images/black forest.webp';
 import Pineapplecake from './assets/images/pineapple-cake-700x700.webp';
 import kulfifaluda from './assets/images/kulfi faluda.jpg';
 import Gulab from './assets/images/Gulab gulkand.jpg';
-import coffeecake from './assets/images/coffee cake.jpeg';
+import coffeecake from './assets/images/Coffee cake.jpeg';
 import oreocake from './assets/images/oreo cake.jpg';
 import Rasmalai from './assets/images/Rasmalai.webp';
 import chocolate from './assets/images/chocolate.webp';
