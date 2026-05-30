@@ -1,7 +1,7 @@
 import cakesSpecialImg from './assets/images/cakes_special_1779797201179.png';
 import browniesSpecialImg from "./assets/images/Brownie01.png";
 import cupcakesSpecialImg from './assets/images/Cupcake01.png';
-import Blackforestcake from './assets/images/Black forest.webp';
+import Blackforestcake from './assets/images/black forest.webp';
 import vanillaCake from './assets/images/Vanilla-cake.jpg';
 import vanillaCake from './assets/images/Vanilla-cake.jpg';
 import vanillaCake from './assets/images/Vanilla-cake.jpg';
