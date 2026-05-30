@@ -133,6 +133,161 @@ export default function CatalogSection({
     }
   };
 
+  const renderProductCard = (product: Product, index: number = 0) => {
+    // Retrieve cart quantity for this item
+    const cartItem = cart.find((item) => item.id === product.id);
+    const currentQty = cartItem ? cartItem.quantity : 0;
+
+    // Matching tag colors from screenshots
+    let tagColorClass = 'bg-[#db0075] text-white'; // Bestseller Magenta
+    if (product.badgeColor === 'teal') {
+      tagColorClass = 'bg-[#0d9488] text-white'; // New Arrival Teal
+    } else if (product.badgeColor === 'gold') {
+      tagColorClass = 'bg-pink-100 text-[#1e113a] font-black border border-pink-200'; // Promo brand-pink/plum tag
+    }
+
+    return (
+      <motion.div
+        key={`${activeTab}-${product.id}`}
+        layout
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.95 }}
+        transition={{ duration: 0.2 }}
+        id={`product-${product.id}`}
+        className="bg-white rounded-[1.25rem] overflow-hidden border border-stone-200/50 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between group h-full relative"
+      >
+        {/* Photo area with zoom modal trigger */}
+        <div className="relative aspect-square bg-stone-50 overflow-hidden shrink-0">
+          <img
+            src={product.image}
+            alt={product.name}
+            onClick={() => onPhotoClick(product.image, product.name)}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 cursor-zoom-in select-none"
+            referrerPolicy="no-referrer"
+          />
+
+          {/* Zoom Clickable Hand Glass Indicator */}
+          <div
+            onClick={() => onPhotoClick(product.image, product.name)}
+            className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center cursor-zoom-in"
+          >
+            <span className="flex items-center gap-1 bg-white text-stone-800 rounded-full py-1 px-3 text-[10px] font-bold shadow-md transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+              <Eye className="w-3 h-3 text-[#db0075]" />
+              <span>Zoom</span>
+            </span>
+          </div>
+
+          {/* Standard Pink/Teal Round Banner Tag (Screenshot 2) */}
+          {product.badge && (
+            <span className={`absolute top-2.5 left-2.5 text-[9px] sm:text-[10px] tracking-wide font-extrabold px-2 py-1 rounded-[4px] shadow-xs flex items-center gap-0.5 leading-none ${tagColorClass}`}>
+              <span className="text-amber-300">★</span>
+              <span className="capitalize">{product.badge}</span>
+            </span>
+          )}
+
+          {/* Share Button on Card Image */}
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              setShareProduct(product);
+            }}
+            className="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-white/95 backdrop-blur-xs shadow-xs hover:shadow-md border border-stone-200/40 flex items-center justify-center text-[#db0075] sm:text-stone-600 hover:text-[#db0075] hover:scale-110 active:scale-95 transition-all cursor-pointer z-10"
+            title={`Share ${product.name}`}
+            aria-label="Share product on social media"
+          >
+            <Share2 className="w-3.5 h-3.5" />
+          </button>
+        </div>
+
+        {/* Body textual content */}
+        <div className="p-3 sm:p-4.5 flex-1 flex flex-col justify-between">
+          <div>
+            {/* Veg Green Box Indicator side-by-side with Title (Screenshot 2 native style) */}
+            <div className="text-left flex items-start gap-1.5 mb-1 bg-white">
+              {product.isVeg && (
+                <div className="border-[1.5px] border-emerald-600 rounded-[2px] w-3.2 h-3.2 p-[1px] inline-flex items-center justify-center bg-white mt-1 shrink-0" title="100% Eggless Vegetarian">
+                  <div className="w-1.2 h-1.2 rounded-full bg-emerald-600"></div>
+                </div>
+              )}
+              <h4 className="text-[13.5px] sm:text-[16px] font-bold text-brand-brown tracking-tight group-hover:text-[#db0075] transition-colors line-clamp-2 min-h-[38px] sm:min-h-[44px] leading-snug">
+                {product.name}
+              </h4>
+            </div>
+
+            {/* Brief description */}
+            <p className="text-[10.5px] sm:text-xs text-[#71717a] font-normal leading-normal mt-0.5 mb-2.5 line-clamp-2 h-8 sm:h-9 overflow-hidden">
+              {product.description}
+            </p>
+          </div>
+
+          {/* Bottom Order Action Box - Styled directly to match second screenshot */}
+          <div className="mt-3 pt-2.5 border-t border-stone-100 flex items-center justify-between">
+            {/* Left: Size & Price options side-by-side for compact ordering */}
+            <div className="flex flex-col text-left">
+              <span className="text-[9px] uppercase tracking-wider text-stone-400 font-extrabold pb-0.5">Price & Size</span>
+              <div className="flex items-center gap-1.5 flex-wrap">
+                <span className="text-[12.5px] font-black text-stone-850">
+                  {product.price > 0 ? `₹${product.price}` : 'Customized'}
+                </span>
+                <span className="text-[10px] font-medium text-stone-300 select-none">•</span>
+                <span className="text-[10px] sm:text-[11px] font-bold text-stone-500 whitespace-nowrap">{product.unit}</span>
+              </div>
+            </div>
+
+            {/* Dynamic Morphing Swiggy Button on Right */}
+            <div className="flex flex-col items-center shrink-0 w-[72px] sm:w-[82px]">
+              <AnimatePresence mode="wait">
+                {currentQty === 0 ? (
+                  <motion.button
+                    key="add-btn"
+                    initial={{ scale: 0.94, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    exit={{ scale: 0.94, opacity: 0 }}
+                    onClick={() => {
+                      onAddToCart(product);
+                    }}
+                    className="w-full h-[26px] sm:h-[30px] bg-[#db0075] hover:bg-[#df006c] text-white font-extrabold rounded-md sm:rounded-lg text-xs tracking-wider transition-all cursor-pointer flex items-center justify-center shadow-xs"
+                  >
+                    Add
+                  </motion.button>
+                ) : (
+                  <motion.div
+                    key="qty-slider"
+                    initial={{ scale: 0.92, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    exit={{ scale: 0.92, opacity: 0 }}
+                    className="flex items-center justify-between w-full bg-[#db0075] text-white px-1.5 h-[26px] sm:h-[30px] rounded-md sm:rounded-lg text-xs font-bold shadow-xs"
+                  >
+                    <button
+                      onClick={() => onUpdateQuantity(product.id, currentQty - 1)}
+                      className="p-0.5 text-white hover:text-stone-200 transition-colors cursor-pointer"
+                      aria-label="Decrease quantity"
+                    >
+                      <Minus className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
+                    </button>
+                    <span className="font-mono text-xs font-black">{currentQty}</span>
+                    <button
+                      onClick={() => onUpdateQuantity(product.id, currentQty + 1)}
+                      className="p-0.5 text-white hover:text-stone-200 transition-colors cursor-pointer"
+                      aria-label="Increase quantity"
+                    >
+                      <Plus className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
+                    </button>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+              <span className="text-[9px] sm:text-[10px] text-gray-400 font-medium tracking-wide mt-1 select-none leading-none capitalize">
+                Customize
+              </span>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    );
+  };
+
   return (
     <section id="catalog-section" className="py-16 px-4 bg-white relative border-t border-stone-100">
       <div className="max-w-7xl mx-auto">
@@ -161,11 +316,12 @@ export default function CatalogSection({
                       works ? 'border-[#db0075] shadow-pink-100 bg-pink-50/10' : 'border-stone-100'
                     }`}
                   >
-                    <div className="relative aspect-square w-full rounded-[1.8rem] overflow-hidden bg-stone-55 shadow-inner">
+                    <div className="relative aspect-square w-full rounded-[1.8rem] overflow-hidden bg-stone-50 shadow-inner">
                       <img
                         src={cat.image}
                         alt={cat.label}
-                        className="w-full h-full object-cover select-none"
+                        className="w-full h-full object-cover select-none transition-transform duration-500 hover:scale-105"
+                        referrerPolicy="no-referrer"
                       />
                       {/* Dark gradient mapping inside circle */}
                       <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/10 to-transparent"></div>
@@ -179,19 +335,16 @@ export default function CatalogSection({
                 );
               })}
             </div>
-          </div>
-        )}
-
-        {/* ========================================== */}
+           {/* ========================================== */}
         {/* SUB HEADER CATEGORY TABS BANNER */}
         {/* ========================================== */}
-        <div id="category-sub-header" className="scroll-mt-4 mb-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 border-b border-stone-200/60 pb-5">
+        <div id="category-sub-header" className="scroll-mt-4 mb-10 text-left">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-b border-stone-200/60 pb-5 mb-8">
             <div>
-              <h3 className="text-2xl font-serif text-[#1e113a] font-bold tracking-tight">
+              <h3 className="text-3xl font-serif text-[#1e113a] font-bold tracking-tight">
                 {getCategoryTitle()}
               </h3>
-              <p className="text-xs text-gray-400 mt-1">
+              <p className="text-sm text-gray-500 mt-1">
                 Showing {filteredProducts.length} delicious item{filteredProducts.length === 1 ? '' : 's'}
               </p>
             </div>
@@ -202,9 +355,9 @@ export default function CatalogSection({
                 <button
                   key={tab}
                   onClick={() => selectCategory(tab)}
-                  className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all duration-200 capitalize ${
+                  className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all duration-200 capitalize cursor-pointer whitespace-nowrap ${
                     activeTab === tab
-                      ? 'bg-[#db0075] text-white shadow-xs'
+                      ? 'bg-[#db0075] text-white shadow-xs animate-none'
                       : 'bg-stone-50 border border-stone-200 text-stone-500 hover:text-stone-700 hover:bg-stone-100/70'
                   }`}
                 >
@@ -218,148 +371,13 @@ export default function CatalogSection({
         {/* ========================================== */}
         {/* PRODUCTS DIRECTORY GRID */}
         {/* ========================================== */}
-        <div ref={catalogListRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div ref={catalogListRef} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8">
           <AnimatePresence mode="popLayout">
-            {filteredProducts.map((product) => {
-              // Retrieve cart quantity for this item
-              const cartItem = cart.find((item) => item.id === product.id);
-              const currentQty = cartItem ? cartItem.quantity : 0;
-
-              return (
-                <motion.div
-                  layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.2 }}
-                  id={`product-${product.id}`}
-                  key={product.id}
-                  className="bg-white rounded-3xl border border-stone-150 shadow-xs hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col group"
-                >
-                  {/* Photo area */}
-                  <div className="relative aspect-[4/3] overflow-hidden bg-stone-50">
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      referrerPolicy="no-referrer"
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 select-none"
-                    />
-
-                    {/* Category Label Overlay */}
-                    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-xs py-1 px-3 rounded-full border border-stone-100 shadow-xs flex items-center gap-1.5 z-10">
-                      <Cake className="w-3 h-3 text-[#db0075]" />
-                      <span className="text-[10px] uppercase font-bold text-stone-650 tracking-wider">
-                        {product.category.replace('-', ' ')}
-                      </span>
-                    </div>
-
-                    {/* Vegetarian Indicator */}
-                    {product.isVeg && (
-                      <div className="absolute bottom-4 left-4 bg-white rounded-md p-1 border border-stone-200/60 shadow-xs z-10" title="100% Pure Veg (Eggless)">
-                        <div className="border border-green-600 p-[2px] rounded-sm">
-                          <div className="w-2 h-2 bg-green-600 rounded-full"></div>
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Badge Overlay */}
-                    {product.badge && (
-                      <div className={`absolute top-4 right-4 text-[10px] font-extrabold tracking-wider uppercase py-1 px-3.5 rounded-full text-white z-10 shadow-xs ${
-                        product.badgeColor === 'pink' ? 'bg-[#db0075]' :
-                        product.badgeColor === 'teal' ? 'bg-teal-500' : 'bg-[#e5a93b]'
-                      }`}>
-                        {product.badge}
-                      </div>
-                    )}
-
-                    {/* Hover controls info bar */}
-                    <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
-                      <button
-                        onClick={() => onPhotoClick(product.image, product.name)}
-                        className="p-3 rounded-full bg-white text-stone-800 shadow-lg hover:text-[#db0075] hover:scale-110 active:scale-95 transition-all cursor-pointer"
-                        title="View Full Resolution Image"
-                      >
-                        <Eye className="w-5 h-5" />
-                      </button>
-                      <button
-                        onClick={() => setShareProduct(product)}
-                        className="p-3 rounded-full bg-white text-stone-800 shadow-lg hover:text-teal-500 hover:scale-110 active:scale-95 transition-all cursor-pointer"
-                        title="Share Delicacy Details"
-                      >
-                        <Share2 className="w-5 h-5" />
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* Details block */}
-                  <div className="p-6 flex flex-col flex-grow">
-                    <div className="mb-3">
-                      <h4 className="text-xl font-serif text-[#1e113a] font-bold tracking-tight capitalize leading-tight group-hover:text-[#db0075] transition-colors">
-                        {product.name}
-                      </h4>
-                      <p className="text-[11px] font-sans font-bold text-stone-400 uppercase tracking-widest mt-1">
-                        Sizing: {product.unit}
-                      </p>
-                    </div>
-
-                    <p className="text-sm font-sans text-stone-550 leading-relaxed flex-grow">
-                      {product.description}
-                    </p>
-
-                    {/* Features list */}
-                    <div className="mt-4 pt-3.5 border-t border-stone-100 flex flex-wrap gap-1.5">
-                      {product.features.map((feat, idx) => (
-                        <span key={idx} className="text-[10px] bg-stone-50 text-stone-500 border border-stone-250/50 py-0.5 px-2.5 rounded-md">
-                          {feat}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* CTA Ordering section */}
-                    <div className="mt-6 flex items-center justify-between gap-4 pt-4 border-t border-stone-100">
-                      <div>
-                        <span className="text-[10px] text-stone-400 block uppercase font-bold tracking-wider leading-none">
-                          Inquiry Price
-                        </span>
-                        <span className="text-2xl font-sans text-[#1e113a] font-black tracking-tight mt-0.5 inline-block">
-                          {product.price > 0 ? `₹${product.price}` : 'Customized'}
-                        </span>
-                      </div>
-
-                      {currentQty > 0 ? (
-                        <div className="flex items-center gap-2.5 bg-pink-50/50 text-[#db0075] border border-pink-100 py-1.5 px-3 rounded-full shadow-xs">
-                          <button
-                            onClick={() => onUpdateQuantity(product.id, currentQty - 1)}
-                            className="p-1 rounded-full hover:bg-white active:scale-90 transition-all text-[#db0075] cursor-pointer"
-                          >
-                            <Minus className="w-3.5 h-3.5" />
-                          </button>
-                          <span className="text-sm font-black w-5 text-center select-none text-[#1e113a]">
-                            {currentQty}
-                          </span>
-                          <button
-                            onClick={() => onUpdateQuantity(product.id, currentQty + 1)}
-                            className="p-1 rounded-full hover:bg-white active:scale-90 transition-all text-[#db0075] cursor-pointer"
-                          >
-                            <Plus className="w-3.5 h-3.5" />
-                          </button>
-                        </div>
-                      ) : (
-                        <button
-                          onClick={() => onAddToCart(product)}
-                          className="px-6 py-2.5 rounded-full bg-[#db0075] hover:bg-[#db0075]/90 hover:scale-[1.03] active:scale-95 text-white text-xs font-black tracking-wide uppercase transition-all shadow-xs cursor-pointer flex items-center gap-1.5"
-                        >
-                          <Plus className="w-3.5 h-3.5" />
-                          <span>Add to Inquiry</span>
-                        </button>
-                      )}
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
+            {filteredProducts.map((product, idx) => renderProductCard(product, idx))}
           </AnimatePresence>
         </div>
+          </div>
+        )}
 
         {/* Personalized disclaimer note */}
         <div className="mt-14 p-5 rounded-2xl bg-stone-50/60 border border-stone-150/80 text-center max-w-2xl mx-auto">
@@ -372,24 +390,33 @@ export default function CatalogSection({
       {/* Share product popup modal */}
       <AnimatePresence>
         {shareProduct && (
-          <div className="fixed inset-0 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 z-150">
+          <div className="fixed inset-0 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 z-50">
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setShareProduct(null)}
+              className="fixed inset-0 bg-stone-900/60 backdrop-blur-xs cursor-pointer z-40"
+            />
+
             <motion.div
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
-              className="bg-white rounded-[2rem] max-w-md w-full p-6 shadow-2xl relative border border-stone-100"
+              className="bg-white rounded-[2rem] max-w-md w-full p-6 shadow-2xl relative border border-stone-100 z-50"
             >
               <button
                 onClick={() => setShareProduct(null)}
-                className="absolute top-4 right-4 p-2 rounded-full hover:bg-stone-100 text-stone-455 transition-colors cursor-pointer"
+                className="absolute top-4 right-4 p-2 rounded-full hover:bg-stone-100 text-stone-400 transition-colors cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
 
-              <h3 className="text-xl font-serif text-[#1e113a] font-bold mb-1">
+              <h3 className="text-xl font-serif text-[#1e113a] font-bold mb-1 text-left">
                 Share this delicacy
               </h3>
-              <p className="text-xs text-stone-450 mb-4">
+              <p className="text-xs text-stone-500 mb-4 text-left">
                 Send details of '{shareProduct.name}' over social channels!
               </p>
 
@@ -412,7 +439,7 @@ export default function CatalogSection({
 
                 <button
                   onClick={() => handleCopyLink(shareProduct)}
-                  className="flex items-center justify-center gap-2 w-full py-3 border border-stone-200 hover:bg-stone-50 text-stone-650 rounded-xl text-xs font-bold transition-colors cursor-pointer"
+                  className="flex items-center justify-center gap-2 w-full py-3 border border-stone-200 hover:bg-stone-50 text-stone-600 rounded-xl text-xs font-bold transition-colors cursor-pointer"
                 >
                   {copiedLink ? (
                     <>
