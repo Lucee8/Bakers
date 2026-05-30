@@ -18,6 +18,7 @@ import vintage from './assets/images/vintage cake.jpg';
 import spacer from './assets/images/spacer cake.jpg';
 import theme from './assets/images/theme cake.jpg';
 import Vanilla from './assets/images/Vanilla sponge cupcakes.jpeg';
+
 export interface Product {
   id: string;
   name: string;
@@ -303,7 +304,7 @@ export const PRODUCTS: Product[] = [
     isVeg: true,
   },
 
-    // 5. Handcrafted Chocolates Category
+  // 5. Chocolates Category
   {
     id: 'chocolate-lettering',
     name: 'Personalized name chocolates',
@@ -317,8 +318,7 @@ export const PRODUCTS: Product[] = [
     features: ['100% customized messages', 'Premium cocoa content', 'Foil wrapped luxury'],
     isVeg: true,
   },
-
-    {
+  {
     id: 'chocolate-truffles',
     name: 'Handcrafted signature truffles',
     category: 'chocolates',
@@ -331,10 +331,6 @@ export const PRODUCTS: Product[] = [
     features: ['Luxury gold foil packaging', 'Assorted international fillings', 'Rich tempering finish'],
     isVeg: true,
   }
-  
-
-
-
 ];
 
 export const DELIVERY_ZONES = [

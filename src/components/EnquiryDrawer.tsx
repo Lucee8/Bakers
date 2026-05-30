@@ -185,7 +185,7 @@ Can you please confirm the custom pricing, ingredient availability, customized i
                             />
                           </div>
 
-                          {/* Message on Cake / Chocolate (Cakes and Chocolates category) */}
+{/* Message on Cake / Chocolate (Cakes and Chocolates category) */}
                           {(item.category === 'cakes' || item.category === 'chocolates') && (
                             <div className="pt-2 border-t border-stone-200/50">
                               <label className="text-[10px] uppercase font-bold text-gray-400 tracking-wider flex items-center gap-1">

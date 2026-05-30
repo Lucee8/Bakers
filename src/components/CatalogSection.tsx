@@ -81,6 +81,7 @@ export default function CatalogSection({
 
   // Quick category card details corresponding to first screenshot
   // Quick category card details corresponding to first screenshot
+// Quick category card details corresponding to first screenshot
   const categoryHighlights = [
     {
       id: 'cakes' as const,
@@ -107,9 +108,9 @@ export default function CatalogSection({
       id: 'vanilla-cupcakes' as const,
       label: 'Vanilla sponge cupcakes',
       labelColor: 'text-[#1e113a]',
-      image: Vanillasponge,
+      image: 'https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?auto=format&fit=crop&q=80&w=600',
       caption: 'Soft vanilla sponge cupcakes'
-    }
+    },
     {
       id: 'chocolates' as const,
       label: 'Chocolates',
