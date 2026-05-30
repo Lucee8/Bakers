@@ -7,7 +7,7 @@ import kulfifaluda from './assets/images/kulfi faluda.jpg';
 import Gulab from './assets/images/Gulab gulkand.jpg';
 import coffeecake from './assets/images/Coffee cake.jpeg';
 import oreocake from './assets/images/oreo cake.jpg';
-import Rasmalai from './assets/images/Rasmalai.webp';
+import Rasmalai from './assets/images/rasmalai.webp';
 import chocolate from './assets/images/chocolate.webp';
 import truffle from './assets/images/truffle cake.jpeg';
 import photo from './assets/images/photo print cake.jpeg';
