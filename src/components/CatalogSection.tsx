@@ -37,7 +37,7 @@ export default function CatalogSection({
   onRemoveFromCart,
   onUpdateQuantity
 }: CatalogProps) {
-  const [activeTab, setActiveTab] = useState<'all' | 'cakes' | 'brownies' | 'chocolate-cupcakes' | 'vanilla-cupcakes'>('all');
+  const [activeTab, setActiveTab] = useState<'all' | 'cakes' | 'brownies' | 'chocolate-cupcakes' | 'vanilla-cupcakes' | 'chocolates'>('all');
   const catalogListRef = useRef<HTMLDivElement>(null);
 
   const [shareProduct, setShareProduct] = useState<Product | null>(null);
@@ -69,7 +69,7 @@ export default function CatalogSection({
   );
 
   // Handle category category card selection with smooth scrolling
-  const selectCategory = (category: 'all' | 'cakes' | 'brownies' | 'chocolate-cupcakes' | 'vanilla-cupcakes') => {
+  const selectCategory = (category: 'all' | 'cakes' | 'brownies' | 'chocolate-cupcakes' | 'vanilla-cupcakes' | 'chocolates') => {
     setActiveTab(category);
     setTimeout(() => {
       const headerElement = document.getElementById('category-sub-header');
@@ -110,6 +110,13 @@ export default function CatalogSection({
       image: Vanillasponge,
       caption: 'Soft vanilla sponge cupcakes'
     }
+    {
+      id: 'chocolates' as const,
+      label: 'Chocolates',
+      labelColor: 'text-[#db0075]',
+      image: 'https://images.unsplash.com/photo-1481391319762-47dff72954d9?auto=format&fit=crop&q=80&w=600',
+      caption: 'Handcrafted premium chocolates'
+    }
   ];
 
   // Map category helper tags to aesthetic sparkles matching image
@@ -123,6 +130,9 @@ export default function CatalogSection({
         return 'Cupcakes';
       case 'vanilla-cupcakes':
         return 'Vanilla Sponge Cupcakes';
+      default:
+      case 'chocolates':
+        return 'Gourmet Handcrafted Chocolates';
       default:
         return 'Our Complete Collection';
     }
@@ -143,7 +153,7 @@ export default function CatalogSection({
             </div>
 
             {/* Grid Layout of the Category Cover Images */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 justify-center">
               {categoryHighlights.map((cat) => {
                 const works = activeTab === cat.id;
                 return (

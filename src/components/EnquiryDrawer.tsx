@@ -185,16 +185,16 @@ Can you please confirm the custom pricing, ingredient availability, customized i
                             />
                           </div>
 
-                          {/* Message on Cake (Standard Cakes category only) */}
-                          {item.category === 'cakes' && (
+                          {/* Message on Cake / Chocolate (Cakes and Chocolates category) */}
+                          {(item.category === 'cakes' || item.category === 'chocolates') && (
                             <div className="pt-2 border-t border-stone-200/50">
                               <label className="text-[10px] uppercase font-bold text-gray-400 tracking-wider flex items-center gap-1">
                                 <PenTool className="w-3 h-3 text-[#db0075]" />
-                                <span>Message to write on Cake</span>
+                                <span>{item.category === 'cakes' ? 'Message to write on Cake' : 'Message on Chocolate Box'}</span>
                               </label>
                               <input
                                 type="text"
-                                placeholder='e.g., "Happy Birthday Nilesh! 🎂"'
+                                placeholder={item.category === 'cakes' ? 'e.g., "Happy Birthday Nilesh! 🎂"' : 'e.g., "Happy Anniversary 🥂" or name initials'}
                                 value={item.customText || ''}
                                 onChange={(e) => onUpdateCustomText(item.id, e.target.value)}
                                 className="w-full text-xs bg-white border border-stone-200 rounded-lg py-1.5 px-2.5 mt-1 focus:outline-none focus:border-brand-pink text-brand-brown placeholder-stone-450"

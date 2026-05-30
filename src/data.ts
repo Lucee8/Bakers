@@ -21,10 +21,10 @@ import Vanilla from './assets/images/Vanilla sponge cupcakes.jpeg';
 export interface Product {
   id: string;
   name: string;
-  category: 'cakes' | 'brownies' | 'chocolate-cupcakes' | 'vanilla-cupcakes';
+  category: 'cakes' | 'brownies' | 'chocolate-cupcakes' | 'vanilla-cupcakes' | 'chocolates';
   price: number;
   unit: string;
-  badge?: 'Bestseller' | 'New Arrival' | 'Chef Special' | 'Get 10% Off' | 'Must Try' | 'Gift Pack';
+  badge?: 'Bestseller' | 'New Arrival' | 'Chef Special' | 'Get 10% Off' | 'Must Try' | 'Gift Pack' | 'Customised';
   badgeColor?: 'pink' | 'gold' | 'teal';
   description: string;
   image: string;
@@ -301,22 +301,38 @@ export const PRODUCTS: Product[] = [
     image: Vanilla,
     features: ['Premium vanilla base', 'Milk chocolate whipped frosting', 'Delicate crumb texture'],
     isVeg: true,
-  }
-  
-  // 5. Vanilla Sponge Cupcakes Category
+  },
+
+    // 5. Handcrafted Chocolates Category
   {
-    id: 'dark-chocolate',
-    name: 'Vanilla sponge cupcake',
-    category: 'vanilla-cupcakes',
-    price: 300,
-    unit: '1 piece / Pack of 50',
+    id: 'chocolate-lettering',
+    name: 'Personalized name chocolates',
+    category: 'chocolates',
+    price: 0,
+    unit: 'Box of 9 / Box of 18',
+    badge: 'Customised',
+    badgeColor: 'teal',
+    description: 'Artisanal dark or milk chocolates molded with custom sugar lettering names, greetings, or anniversary wishes inside a royal gift box.',
+    image: 'https://images.unsplash.com/photo-1549007994-cb92ca8a3aab?auto=format&fit=crop&q=80&w=600',
+    features: ['100% customized messages', 'Premium cocoa content', 'Foil wrapped luxury'],
+    isVeg: true,
+  },
+
+    {
+    id: 'chocolate-truffles',
+    name: 'Handcrafted signature truffles',
+    category: 'chocolates',
+    price: 0,
+    unit: 'Box of 12 / 24',
     badge: 'Chef Special',
     badgeColor: 'gold',
-    description: '.',
-    image: Vanilla,
-    features: [''],
+    description: 'Luxury assortment of dark ganache truffles, salted caramel pralines, and hazelnut clusters hand-dipped in premium Belgian tempering.',
+    image: 'https://images.unsplash.com/photo-1548907040-4d42b52115ca?auto=format&fit=crop&q=80&w=600',
+    features: ['Luxury gold foil packaging', 'Assorted international fillings', 'Rich tempering finish'],
     isVeg: true,
   }
+  
+
 
 
 ];
