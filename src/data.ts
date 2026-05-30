@@ -17,6 +17,9 @@ import plum from './assets/images/plum cake.jpg';
 import vintage from './assets/images/vintage cake.jpg';
 import spacer from './assets/images/spacer cake.jpg';
 import theme from './assets/images/theme cake.jpg';
+import Vanilla from './assets/images/Vanilla sponge cupcakes.jpeg';
+import DarkChocolate from './assets/images/Dark.png';
+
 export interface Product {
   id: string;
   name: string;
@@ -325,10 +328,29 @@ export const PRODUCTS: Product[] = [
     badge: 'Chef Special',
     badgeColor: 'gold',
     description: 'Light and airy vanilla sponge cupcakes crowned with luscious, creamy milk chocolate peaks and chocolate flakes.',
-    image: 'src/assets/images/Vanilla sponge cupcakes.jpeg',
+    image: Vanilla,
     features: ['Premium vanilla base', 'Milk chocolate whipped frosting', 'Delicate crumb texture'],
     isVeg: true,
   }
+
+    // 4. Dark chocolate Category
+{
+  id: 'Dark chocolate',
+  name: 'Dark Chocolate',
+  category: '',
+  price: ,
+  unit: 'minimum 50',
+  badge: 'Best Seller',
+  badgeColor: 'gold',
+  description: 'Rich and indulgent handcrafted dark chocolates wrapped in premium foil, featuring an intense cocoa flavor with a smooth, velvety finish for true chocolate lovers.',
+  image: DarkChocolate,
+  features: [
+    '70% premium dark cocoa',
+    'Smooth melt-in-mouth texture',
+    'Handcrafted artisan quality'
+  ],
+  isVeg: true,
+}
 ];
 
 export const DELIVERY_ZONES = [
@@ -337,11 +359,13 @@ export const DELIVERY_ZONES = [
     areas: ['Vashi', 'Nerul', 'Koparkhairane', 'Belapur', 'Kharghar', 'Ghansoli', 'Airoli'],
     description: 'Carefully packed cake boxes delivered in air-conditioned courier transit to protect frosting.'
   },
+
   {
     name: 'Central Mumbai',
     areas: ['Kanjurmarg', 'Bhandup', 'Mulund', 'Ghatkopar', 'Vikhroli', 'Sion', 'Kurla', 'Dadrar'],
     description: 'Local lightning delivery from our Kanjurmarg West workspace. Freshly out of the oven.'
   },
+
   {
     name: 'Western Mumbai',
     areas: ['Andheri', 'Bandra', 'Borivali', 'Malad', 'Goregaon', 'Juhu', 'Santacruz'],
