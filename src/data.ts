@@ -18,6 +18,8 @@ import vintage from './assets/images/vintage cake.jpg';
 import spacer from './assets/images/spacer cake.jpg';
 import theme from './assets/images/theme cake.jpg';
 import Vanilla from './assets/images/Vanilla sponge cupcakes.jpeg';
+import dark from './assets/images/Dark.png';
+
 
 export interface Product {
   id: string;
@@ -290,19 +292,19 @@ export const PRODUCTS: Product[] = [
   },
 
   // 5. Chocolates Category
-  {
-    id: 'chocolate-lettering',
-    name: 'Personalized name chocolates',
-    category: 'chocolates',
-    price: 0,
-    unit: 'Box of 9 / Box of 18',
-    badge: 'Customised',
-    badgeColor: 'teal',
-    description: 'Artisanal dark or milk chocolates molded with custom sugar lettering names, greetings, or anniversary wishes inside a royal gift box.',
-    image: 'https://images.unsplash.com/photo-1549007994-cb92ca8a3aab?auto=format&fit=crop&q=80&w=600',
-    features: ['100% customized messages', 'Premium cocoa content', 'Foil wrapped luxury'],
-    isVeg: true,
-  },
+  // {
+  //   id: 'chocolate-lettering',
+  //   name: 'Personalized name chocolates',
+  //   category: 'chocolates',
+  //   price: 0,
+  //   unit: 'Box of 9 / Box of 18',
+  //   badge: 'Customised',
+  //   badgeColor: 'teal',
+  //   description: 'Artisanal dark or milk chocolates molded with custom sugar lettering names, greetings, or anniversary wishes inside a royal gift box.',
+  //   image: 'https://images.unsplash.com/photo-1549007994-cb92ca8a3aab?auto=format&fit=crop&q=80&w=600',
+  //   features: ['100% customized messages', 'Premium cocoa content', 'Foil wrapped luxury'],
+  //   isVeg: true,
+  // },
   {
     id: 'chocolate-truffles',
     name: 'Handcrafted signature truffles',
@@ -312,7 +314,7 @@ export const PRODUCTS: Product[] = [
     badge: 'Chef Special',
     badgeColor: 'gold',
     description: 'Luxury assortment of dark ganache truffles, salted caramel pralines, and hazelnut clusters hand-dipped in premium Belgian tempering.',
-    image: 'https://images.unsplash.com/photo-1548907040-4d42b52115ca?auto=format&fit=crop&q=80&w=600',
+    image: dark,
     features: ['Luxury gold foil packaging', 'Assorted international fillings', 'Rich tempering finish'],
     isVeg: true,
   }
