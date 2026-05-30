@@ -282,7 +282,7 @@ export const PRODUCTS: Product[] = [
     name: 'Vanilla sponge cupcake',
     category: 'vanilla-cupcakes',
     price: 50,
-    unit: '1 piece',
+    unit: '5 piece',
     badge: 'Chef Special',
     badgeColor: 'gold',
     description: 'Light and airy vanilla sponge cupcakes crowned with luscious, creamy milk chocolate peaks and chocolate flakes.',
