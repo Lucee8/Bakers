@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ChefHat, ShoppingBag, Menu, X, ShoppingCart } from 'lucide-react';
+import { Analytics } from '@vercel/analytics/react';
 import QuickHeader from './components/QuickHeader';
 import HeroSection from './components/HeroSection';
 import logoImg from './assets/images/vaishali_logo_exact_1780074012944.png';
@@ -299,6 +300,9 @@ export default function App() {
 
       {/* 11. Constant UX components */}
       <FloatingWhatsAppButton />
+      
+      {/* 12. Vercel Web Analytics */}
+      <Analytics />
     </div>
   );
 }
